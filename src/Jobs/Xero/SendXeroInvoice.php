@@ -4,7 +4,6 @@ namespace Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero;
 
 use File;
 use DateTime;
-use Lukecurtis\LaravelXeroBoilerplate\Models\XeroInvoice as LaravelInvoice;
 use Illuminate\Bus\Queueable;
 use Spatie\Browsershot\Browsershot;
 use Illuminate\Queue\SerializesModels;
@@ -16,6 +15,7 @@ use XeroPHP\Models\Accounting\Contact as XeroContact;
 use XeroPHP\Models\Accounting\Invoice as XeroInvoice;
 use XeroPHP\Models\Accounting\Attachment as XeroAttachment;
 use XeroPHP\Models\Accounting\Invoice\LineItem as XeroLineItem;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice as LaravelInvoice;
 
 class SendXeroInvoice implements ShouldQueue
 {
@@ -49,7 +49,7 @@ class SendXeroInvoice implements ShouldQueue
         //
         $xeroInvoice = new XeroInvoice($this->xero);
 
-        $xeroInvoice->setContact($this->xero->loadByGUID(XeroContact::class, $this->invoice->company->xeroContact->xero_id))
+        $xeroInvoice->setContact($this->xero->loadByGUID(XeroContact::class, $this->invoice->xeroContact->xero_id))
                     ->setReference($this->invoice->name)
                     ->setType($this->invoice->type)
                     ->setCurrencyCode('AUD')

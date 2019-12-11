@@ -3,10 +3,10 @@
 namespace Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero;
 
 use Illuminate\Bus\Queueable;
-use  Lukecurtis\LaravelXeroBoilerplate\Models\XeroAccount;
+use  Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroAccount;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
-use Lukecurtis\LaravelXeroBoilerplate\Models\XeroContact as Contact;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroContact as Contact;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use XeroPHP\Application\PrivateApplication;
@@ -62,8 +62,5 @@ class SyncXeroContacts implements ShouldQueue
 
         //Delete the contacts that are no longer customers
         Contact::whereNotIn('id', $persistedContacts->pluck('id'))->delete();
-
-        //Remove the link where the company is no longer in it.
-        Company::whereNotIn('xero_contact_id', $persistedContacts->pluck('id'))->update(['xero_contact_id' => null]);
     }
 }

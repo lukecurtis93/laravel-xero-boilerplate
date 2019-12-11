@@ -4,7 +4,7 @@ namespace Lukecurtis\LaravelXeroBoilerplate\Models\Xero;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Traits\HasSchemalessAttributes;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Traits\HasSchemalessAttributes;
 
 class XeroContact extends Model
 {

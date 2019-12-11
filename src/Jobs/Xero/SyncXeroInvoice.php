@@ -2,7 +2,7 @@
 
 namespace Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero;
 
-use Lukecurtis\LaravelXeroBoilerplate\Models\XeroInvoice as LaravelInvoice;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice as LaravelInvoice;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;

@@ -17,15 +17,15 @@ trait HasInvoicesTrait
         return $this->morphMany(config('laravel-xero-boilerplate.invoice_model'), 'model');
     }
 
-    public function addXeroInvoice(XeroInvoice $invoice)
+    public function addXeroInvoice($invoice)
     {
         dispatch_now(new SendXeroInvoice($invoice));
-        $this->xeroInvoices()->save($invoice);
+        $this->xeroInvoices()->attach($invoice);
 
         return $invoice;
     }
 
-    public function markXeroInvoiceAsPaid(XeroInvoice $invoice)
+    public function markXeroInvoiceAsPaid($invoice)
     {
         dispatch_now(new MarkXeroInvoiceAsPaid($invoice));
         

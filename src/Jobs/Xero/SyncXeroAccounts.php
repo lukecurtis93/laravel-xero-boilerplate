@@ -5,11 +5,11 @@ namespace Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
-use App\Models\Xero\XeroAccount as Account;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use XeroPHP\Application\PrivateApplication;
 use XeroPHP\Models\Accounting\Account as XeroAccount;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroAccount as Account;
 
 class SyncXeroAccounts implements ShouldQueue
 {

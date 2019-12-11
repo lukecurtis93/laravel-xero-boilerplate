@@ -21,7 +21,7 @@ class CreateXeroInvoicesTable extends Migration
             $table->string('type');
             $table->string('xero_id')->nullable();
             $table->text('xero_guid')->nullable();
-            $table->morphs('model');
+            $table->nullableMorphs('model');
             $table->DateTime('due_date');
             $table->DateTime('paid_at')->nullable();
             $table->string('status');

@@ -2,7 +2,7 @@
 
 namespace Lukecurtis\LaravelXeroBoilerplate\HasInvoice;
 
-interface HasInvoice
+interface HasInvoices
 {
     /**
      * Set the polymorphic relation.
