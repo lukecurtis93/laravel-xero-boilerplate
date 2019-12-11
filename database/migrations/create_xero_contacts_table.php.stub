@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateXeroContactsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('xero_contacts', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('xero_id');
+            $table->string('contact_number')->nullable();
+            $table->string('account_number')->nullable();
+            $table->string('contact_status')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('tax_number')->nullable();
+            $table->string('email_address')->nullable();
+            $table->boolean('is_supplier')->nullable();
+            $table->boolean('is_customer')->nullable();
+            $table->schemalessAttributes('extra_attributes');
+
+            $table->unsignedBigInteger('sales_xero_account_id')->nullable();
+            $table->unsignedBigInteger('purchases_xero_account_id')->nullable();
+
+            $table->foreign('sales_xero_account_id')->references('id')->on('xero_accounts');
+            $table->foreign('purchases_xero_account_id')->references('id')->on('xero_accounts');
+
+            $table->softDeletes();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('xero_contacts');
+    }
+}

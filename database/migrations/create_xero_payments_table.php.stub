@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateXeroPaymentsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('xero_payments', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('xero_id');
+            $table->string('status');
+            $table->integer('amount');
+            $table->string('payment_type');
+            $table->unsignedBigInteger('xero_invoice_id');
+            $table->unsignedBigInteger('xero_account_id')->nullable();
+
+            $table->foreign('xero_invoice_id')->references('id')->on('xero_invoices');
+            $table->foreign('xero_account_id')->references('id')->on('xero_accounts');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('xero_payments');
+    }
+}

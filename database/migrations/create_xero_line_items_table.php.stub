@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateXeroLineItemsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('xero_line_items', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('xero_item_id')->nullable();
+            $table->string('description');
+            $table->string('quantity');
+            $table->unsignedBigInteger('xero_account_id');
+            $table->integer('unit_price');
+            $table->integer('total');
+            $table->unsignedBigInteger('xero_invoice_id');
+            $table->string('xero_id')->nullable();
+            $table->string('tax_type')->nullable();
+
+            $table->foreign('xero_invoice_id')->references('id')->on('xero_invoices');
+            $table->foreign('xero_item_id')->references('id')->on('xero_items');
+            $table->foreign('xero_account_id')->references('id')->on('xero_accounts');
+
+            $table->softDeletes();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('xero_line_items');
+    }
+}

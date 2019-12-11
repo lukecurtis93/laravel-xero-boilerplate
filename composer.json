@@ -1,0 +1,59 @@
+{
+    "name": "lukecurtis/laravel-xero-boilerplate",
+    "description": "Laravel Boilerplate with Commands, Migrations, Jobs & Models for Seamless Laravel Integration",
+    "keywords": [
+        "lukecurtis",
+        "laravel-xero-boilerplate"
+    ],
+    "homepage": "https://github.com/lukecurtis/laravel-xero-boilerplate",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Luke Curtis",
+            "email": "lukesimoncurtis@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "askedio/laravel-soft-cascade": "^5.8",
+        "calcinai/xero-php": "^1.9",
+        "cknow/laravel-money": "^3.8",
+        "illuminate/support": "5.8.*",
+        "spatie/browsershot": "^3.33",
+        "spatie/laravel-schemaless-attributes": "^1.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lukecurtis\\LaravelXeroBoilerplate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lukecurtis\\LaravelXeroBoilerplate\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lukecurtis\\LaravelXeroBoilerplate\\LaravelXeroBoilerplateServiceProvider"
+            ],
+            "aliases": {
+                "LaravelXeroBoilerplate": "Lukecurtis\\LaravelXeroBoilerplate\\LaravelXeroBoilerplateFacade"
+            }
+        }
+    }
+}
