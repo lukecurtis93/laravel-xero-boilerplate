@@ -1,11 +1,11 @@
-# Very short description of the package
+# Laravel Xero Boilerplate
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lukecurtis/laravel-xero-boilerplate.svg?style=flat-square)](https://packagist.org/packages/lukecurtis/laravel-xero-boilerplate)
-[![Build Status](https://img.shields.io/travis/lukecurtis/laravel-xero-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/lukecurtis/laravel-xero-boilerplate)
-[![Quality Score](https://img.shields.io/scrutinizer/g/lukecurtis/laravel-xero-boilerplate.svg?style=flat-square)](https://scrutinizer-ci.com/g/lukecurtis/laravel-xero-boilerplate)
+[![Build Status](https://img.shields.io/travis/lukecurtis/laravel-xero-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/lukecurtis93/laravel-xero-boilerplate)
+[![Quality Score](https://img.shields.io/scrutinizer/g/lukecurtis/laravel-xero-boilerplate.svg?style=flat-square)](https://scrutinizer-ci.com/g/lukecurtis93/laravel-xero-boilerplate)
 [![Total Downloads](https://img.shields.io/packagist/dt/lukecurtis/laravel-xero-boilerplate.svg?style=flat-square)](https://packagist.org/packages/lukecurtis/laravel-xero-boilerplate)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Projects that integrate with Xero and Laravel have a lot of the same boilerplate. Here is what we do.
 
 ## Installation
 
