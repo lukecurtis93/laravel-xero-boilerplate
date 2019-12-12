@@ -2,9 +2,9 @@
 
 namespace Lukecurtis\LaravelXeroBoilerplate\Models\Xero;
 
+use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\Traits\Relationship\XeroLineItemRelationship;
 
 class XeroLineItem extends Model

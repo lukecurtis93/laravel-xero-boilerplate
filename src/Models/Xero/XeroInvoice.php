@@ -2,10 +2,10 @@
 
 namespace Lukecurtis\LaravelXeroBoilerplate\Models\Xero;
 
+use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Cknow\Money\Money;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\Traits\Relationship\XeroInvoiceRelationship;
 
 class XeroInvoice extends Model
@@ -56,7 +56,7 @@ class XeroInvoice extends Model
         $total = $this->line_item_total_with_gst;
         $payments = $this->xeroPayments()->sum('amount');
 
-    if ($total) {
+        if ($total) {
             return round($total - $payments);
         }
 

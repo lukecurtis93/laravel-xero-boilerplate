@@ -3,8 +3,8 @@
 namespace Lukecurtis\LaravelXeroBoilerplate\Http\Middleware;
 
 use Closure;
-use XeroPHP\Webhook;
 use XeroPHP\Application\PrivateApplication;
+use XeroPHP\Webhook;
 
 /**
  * Class VerifyXeroToken.

@@ -3,9 +3,9 @@
 namespace Lukecurtis\LaravelXeroBoilerplate\Console\Commands;
 
 use Illuminate\Console\Command;
-use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SyncXeroItems;
 use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SyncXeroAccounts;
 use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SyncXeroContacts;
+use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SyncXeroItems;
 
 class SyncXero extends Command
 {

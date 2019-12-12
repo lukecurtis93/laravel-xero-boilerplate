@@ -2,12 +2,12 @@
 
 namespace Lukecurtis\LaravelXeroBoilerplate\Http\Controllers\Webhooks;
 
-use XeroPHP\Webhook;
 use Illuminate\Http\Request;
-use XeroPHP\Application\PrivateApplication;
-use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice;
-use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SyncXeroInvoice;
 use Lukecurtis\LaravelXeroBoilerplate\Http\Controllers\Controller;
+use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SyncXeroInvoice;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice;
+use XeroPHP\Application\PrivateApplication;
+use XeroPHP\Webhook;
 
 class XeroWebhookController extends Controller
 {

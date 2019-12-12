@@ -1,9 +1,9 @@
 <?php
+
 namespace Lukecurtis\LaravelXeroBoilerplate\HasInvoice;
 
-use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice;
-use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SendXeroInvoice;
 use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\MarkXeroInvoiceAsPaid;
+use Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero\SendXeroInvoice;
 
 trait HasInvoicesTrait
 {
@@ -28,7 +28,7 @@ trait HasInvoicesTrait
     public function markXeroInvoiceAsPaid($invoice)
     {
         dispatch_now(new MarkXeroInvoiceAsPaid($invoice));
-        
+
         return $invoice;
     }
 }

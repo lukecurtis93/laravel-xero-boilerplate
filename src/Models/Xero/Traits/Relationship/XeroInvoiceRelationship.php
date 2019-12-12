@@ -3,8 +3,8 @@
 namespace Lukecurtis\LaravelXeroBoilerplate\Models\Xero\Traits\Relationship;
 
 use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroContact;
-use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroPayment;
 use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroLineItem;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroPayment;
 
 /**
  * Class XeroInvoiceRelationship.

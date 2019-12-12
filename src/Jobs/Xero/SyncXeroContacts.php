@@ -3,12 +3,12 @@
 namespace Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero;
 
 use Illuminate\Bus\Queueable;
-use  Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroAccount;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroContact as Contact;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use  Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroAccount;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroContact as Contact;
 use XeroPHP\Application\PrivateApplication;
 use XeroPHP\Models\Accounting\Contact as XeroContact;
 
