@@ -5,12 +5,12 @@ namespace Lukecurtis\LaravelXeroBoilerplate\Models\Xero;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Askedio\SoftCascade\Traits\SoftCascadeTrait;
-use Lukecurtis\LaravelXeroBoilerplate\Models\Traits\Relationship\LineItemRelationship;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\Traits\Relationship\XeroLineItemRelationship;
 
 class XeroLineItem extends Model
 {
     //
-    use SoftDeletes, SoftCascadeTrait, LineItemRelationship;
+    use SoftDeletes, SoftCascadeTrait, XeroLineItemRelationship;
 
     /**
      * The attributes that are mass assignable.

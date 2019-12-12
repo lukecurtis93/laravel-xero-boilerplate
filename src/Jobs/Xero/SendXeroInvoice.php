@@ -65,7 +65,7 @@ class SendXeroInvoice implements ShouldQueue
             $xeroLineItem->setDescription($item->description)
                          ->setQuantity($item->quantity)
                          ->setUnitAmount($item->dollar_unit_price)
-                         ->setItemCode($item->xeroItem->code)
+                         ->setItemCode($item->code)
                          ->setAccountCode($item->xeroAccount->code);
 
             $xeroInvoice->addLineItem($xeroLineItem);

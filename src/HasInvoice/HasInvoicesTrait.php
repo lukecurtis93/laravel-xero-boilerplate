@@ -20,7 +20,7 @@ trait HasInvoicesTrait
     public function addXeroInvoice($invoice)
     {
         dispatch_now(new SendXeroInvoice($invoice));
-        $this->xeroInvoices()->attach($invoice);
+        $this->xeroInvoices()->save($invoice);
 
         return $invoice;
     }

@@ -20,19 +20,7 @@ class XeroInvoice extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'xero_contact_id',
-        'email',
-        'due_date',
-        'type',
-        'model_type',
-        'model_id',
-        'paid_at',
-        'status',
-        'name',
-        'xero_id',
-        'xero_guid',
-    ];
+    protected $guarded = [];
 
     protected $dates = ['paid_at'];
 
@@ -45,7 +33,7 @@ class XeroInvoice extends Model
 
     public function getDollarTotalAttribute()
     {
-        return Money::AUD(round($this->lineItems()->sum('total')));
+        return Money::AUD(round($this->xeroLineItems()->sum('total')));
     }
 
     public function getDollarTotalInclGstAttribute()
