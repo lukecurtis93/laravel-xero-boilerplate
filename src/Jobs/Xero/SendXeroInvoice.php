@@ -2,20 +2,17 @@
 
 namespace Lukecurtis\LaravelXeroBoilerplate\Jobs\Xero;
 
-use File;
 use DateTime;
 use Illuminate\Bus\Queueable;
-use Spatie\Browsershot\Browsershot;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice as LaravelInvoice;
 use XeroPHP\Application\PrivateApplication;
 use XeroPHP\Models\Accounting\Contact as XeroContact;
 use XeroPHP\Models\Accounting\Invoice as XeroInvoice;
-use XeroPHP\Models\Accounting\Attachment as XeroAttachment;
 use XeroPHP\Models\Accounting\Invoice\LineItem as XeroLineItem;
-use Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice as LaravelInvoice;
 
 class SendXeroInvoice implements ShouldQueue
 {
@@ -34,7 +31,6 @@ class SendXeroInvoice implements ShouldQueue
     {
         //
         $this->xero = new PrivateApplication(config('laravel-xero-boilerplate'));
-
 
         $this->invoice = $invoice;
     }
@@ -59,7 +55,7 @@ class SendXeroInvoice implements ShouldQueue
         if ($this->invoice->status == 'AUTHORISED') {
             $xeroInvoice->setSentToContact(true);
         }
-        
+
         foreach ($this->invoice->xeroLineItems as $item) {
             $xeroLineItem = new XeroLineItem($this->xero);
             $xeroLineItem->setDescription($item->description)
@@ -72,7 +68,6 @@ class SendXeroInvoice implements ShouldQueue
         }
 
         if ($xeroInvoice->save()) {
-
             $this->invoice->update([
                 'xero_id' => $xeroInvoice->getInvoiceNumber(),
                 'xero_guid' => $xeroInvoice->getGUID(),

@@ -12,14 +12,12 @@ interface HasInvoices
     public function xeroInvoices();
 
     /**
-     * Add the invoice
-     *
+     * Add the invoice.
      */
     public function addXeroInvoice($xeroInvoice);
 
     /**
-     * Mark the invoice as paid
-     *
+     * Mark the invoice as paid.
      */
     public function markXeroInvoiceAsPaid($xeroInvoice);
 }

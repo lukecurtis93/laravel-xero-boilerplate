@@ -92,7 +92,7 @@ class LaravelXeroBoilerplateServiceProvider extends ServiceProvider
         $this->app->bind('command.laravelxeroboilerplate:sync', SyncXero::class);
 
         $this->commands([
-            'command.laravelxeroboilerplate:sync'
+            'command.laravelxeroboilerplate:sync',
         ]);
     }
 }

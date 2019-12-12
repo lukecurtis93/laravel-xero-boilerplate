@@ -57,7 +57,7 @@ return [
         'rsa_public_key'   => env('XERO_RSA_PUBLIC_KEY', 'file:///home/absolutepath//Certificates/publickey.cer'),
     ],
     'line_items' => [
-        'tax_rate' => 1.1
+        'tax_rate' => 1.1,
     ],
     'invoice_model' => Lukecurtis\LaravelXeroBoilerplate\Models\Xero\XeroInvoice::class,
 ];
