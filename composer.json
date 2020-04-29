@@ -20,7 +20,7 @@
         "askedio/laravel-soft-cascade": "^6.0.1",
         "calcinai/xero-php": "^1.9",
         "cknow/laravel-money": "^3.8",
-        "illuminate/support": "5.8.*",
+        "illuminate/support": "6.18.*",
         "spatie/browsershot": "^3.33",
         "spatie/laravel-schemaless-attributes": "^1.6"
     },
