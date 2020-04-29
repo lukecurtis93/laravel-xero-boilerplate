@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "askedio/laravel-soft-cascade": "^5.8",
+        "askedio/laravel-soft-cascade": "^6.0.1",
         "calcinai/xero-php": "^1.9",
         "cknow/laravel-money": "^3.8",
         "illuminate/support": "5.8.*",
